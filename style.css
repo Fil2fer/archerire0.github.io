@@ -1,0 +1,212 @@
+nav  a { /* tous les liens a à l'intérieur de la balise nav */
+    float: left; /* effet flottant */
+    text-decoration: none; /* pas d'héritage avec effet souligné */
+    color: #ffffff; /* couleur du texte */
+    background: #000000; /* couleur de fond */
+    height: 36px; /* hauteur */
+    line-height: 33px; /* interligne */
+    padding: 0 10px; /* marges intérieur */
+    font-family: sans-serif; /* police d'écriture */
+    font-size: 13px; /* taille du texte */
+    transition: 0.5s; /* temps de transition lors du hover : une demi seconde */
+}
+
+nav  a:hover:first-child {  /* Cible le premier élément de navigation */
+    background: #2b1ea5;
+}
+
+nav  a:hover:nth-child(2) { /* Cible les éléments de navigation en fonction de leur
+                            position dans le document : ici le 2e */
+    background: #96aa24;
+}
+
+nav  a:hover:nth-child(3) { /* Cible les éléments de navigation en fonction de leur
+                            position dans le document : ici le 3e */
+    background: #4be604;
+}
+
+nav  a:hover:nth-child(4) { /* Cible les éléments de navigation en fonction de leur
+    position dans le document : ici le 4e */
+    background: #03f2fae7;
+}
+
+nav  a:hover:nth-child(5) { /* Cible les éléments de navigation en fonction de leur
+    position dans le document : ici le 5e */
+    background: #f43c80;
+}
+
+.logo {
+    float: right;
+}
+
+body {
+    background: #f1f1f1;
+    font-family: "Lato", sans-serif;
+    background-color: rgb(236,253,237); /* Le fond de la page sera de cette couleur */
+    color: rgb(100,0,50,0.8); 
+    background: url("/projetarcherire/2/ressources/photo1.png") no-repeat;
+    background-size: cover;     /*Image centrale */
+    margin: 0;
+    padding: 0;                 /* centrage hauteur et largeur de l'image centrale en responsive */
+}
+
+.container {
+    width: 100%;
+    max-width: 1800px;       /* largeur de la page */
+    margin: auto;
+}
+
+h1 {
+    color: #1a2f42;
+    margin: 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed gray;
+}
+
+h1 span {
+    display: block;
+}
+
+h1 span:nth-child(1) {
+    font-weight: normal;
+    color: #f43c80;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+h1 span:nth-child(2) {
+    font-weight: normal;
+    color: rgb(100,0,50,0.8);
+    font-size: 65%;
+    font-weight: bold;
+}
+
+h1 span:nth-child(3) {
+    font-weight: normal;
+    color: rgb(100,0,50,0.8);
+    font-size: 50%;
+    font-weight: lighter;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 80px;             /* espace utile entre les cartes */
+    margin: 10px 0;
+}
+
+.card-wrapper {
+    position: relative;
+    min-height: 200px;          /* Hauteur carte */
+    perspective: 1000px;        /* recherche sur perpective à faire car le fait de varier de 2000 à 1000 ne semble pas faire grad chose ... */
+    perspective-origin: top;
+}
+
+.card-wrapper:hover .card {
+    transform: rotateY(180deg);
+}
+
+.card {
+    position: relative;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.86,0,0.07,1);
+    color: white;
+    font-weight: bold;
+    
+}
+
+.card-front, .card-back {
+    position: absolute;
+    height: 80%;        /* taille de la carte hauteur */
+    width: 80%;         /* taille de la carte largeur */
+    padding: 29px;      /* Bord de la carte front ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+    border-radius: 50px;        /* arrondis de la carte */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    opacity: 0.7;       /* gestion de la transparence des cartes */
+    top: 469px;
+}
+
+.card-front {
+    background: #1a2f42;
+    display: flex;
+    flex-direction : column;
+    justify-content: space-between;
+}
+
+.card-front {
+    font-size: 20px;        /* hauteur des lettres au premier SPAN */
+    /* line-height: 100%; */
+}
+
+/* trouver un moyen de rendre visible quand le curseur est au dessus */
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*
+.card:hover:card-front {                   /* +++++++++++++ ESSAI +++++++++++++++ 
+    position: absolute;
+    height: 80%;        /* taille de la carte hauteur 
+    width: 80%;         /* taille de la carte largeur 
+    padding: 29px;      /* Bord de la carte front ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+    border-radius: 50px;        /* arrondis de la carte 
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    
+}
+
+a:hover:card-back {                   /* +++++++++++++ ESSAI +++++++++++++++ 
+    position: absolute;
+    height: 80%;        /* taille de la carte hauteur 
+    width: 80%;         /* taille de la carte largeur 
+    padding: 29px;      /* Bord de la carte front ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+    border-radius: 50px;        /* arrondis de la carte 
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    
+}
+*/
+
+.card-price {
+    font-size: 15px;
+}
+
+.card-back {
+    background: #1a2f42;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-wrapper:nth-child(even) .card-front {
+    background-color: #ed5d34;
+}
+
+.card-wrapper:nth-child(even) .card-back {
+    background-color: #ed5d34;
+}
+
+.card-back a {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: normal;
+    background-color: #fff;
+    font-size: 14px;
+    color: #333;
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+}
+
+.card-wrapper:nth-child(odd) .card-back a:hover {
+    background-color: #ed5d34;
+    color: #fff;
+}
+
+.card-wrapper:nth-child(even) .card-back a:hover {
+    background-color: #1a2f42;
+    color: #fff;
+}

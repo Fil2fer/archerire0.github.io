@@ -1,0 +1,40 @@
+nav  a { /* tous les liens a à l'intérieur de la balise nav */
+    float: left; /* effet flottant */
+    text-decoration: none; /* pas d'héritage avec effet souligné */
+    color: #ffffff; /* couleur du texte */
+    background: #000000; /* couleur de fond */
+    height: 36px; /* hauteur */
+    line-height: 33px; /* interligne */
+    padding: 0 10px; /* marges intérieur */
+    font-family: sans-serif; /* police d'écriture */
+    font-size: 13px; /* taille du texte */
+    transition: 0.5s; /* temps de transition lors du hover : une demi seconde */
+}
+
+nav  a:hover:first-child {  /* Cible le premier élément de navigation */
+    background: #2b1ea5;
+}
+
+nav  a:hover:nth-child(2) { /* Cible les éléments de navigation en fonction de leur
+                            position dans le document : ici le 2e */
+    background: #96aa24;
+}
+
+nav  a:hover:nth-child(3) { /* Cible les éléments de navigation en fonction de leur
+                            position dans le document : ici le 3e */
+    background: #4be604;
+}
+
+nav  a:hover:nth-child(4) { /* Cible les éléments de navigation en fonction de leur
+    position dans le document : ici le 4e */
+    background: #03f2fae7;
+}
+
+nav  a:hover:nth-child(5) { /* Cible les éléments de navigation en fonction de leur
+    position dans le document : ici le 5e */
+    background: #f43c80;
+}
+
+.logo {
+    float: right;
+}
